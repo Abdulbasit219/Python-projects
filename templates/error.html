@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-50 flex justify-center items-center min-h-screen">
+
+    <div class="bg-white p-8 rounded-xl shadow-md text-center max-w-md">
+        <h1 class="text-2xl font-bold text-red-600 mb-4">An Error Occurred</h1>
+
+        {% if message %}
+            <p class="text-gray-700">{{ message }}</p>
+        {% else %}
+            <p class="text-gray-700">Something went wrong.</p>
+        {% endif %}
+
+        <a href="/" 
+           class="mt-6 inline-block bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
+            Go Back Home
+        </a>
+    </div>
+
+</body>
+</html>

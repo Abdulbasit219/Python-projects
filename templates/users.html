@@ -1,0 +1,65 @@
+<!-- <a href="/logout">
+            <button>Logout</button>
+</a>
+
+{{current_user.id}}
+
+{% for user in data %}
+<ul>
+<li>
+
+        <h3>User {{ loop.index }}</h3>
+        <p>Name: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+
+
+        <a href="/user/{{ user.id }}">
+            <button>View</button>
+        </a>
+
+        <hr>
+
+</li>
+</ul>
+{% endfor %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold">Welcome, User {{ current_user.id }}</h1>
+
+      <a href="/logout">
+        <button
+          class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+        >
+          Logout
+        </button>
+      </a>
+    </div>
+
+    <h2 class="text-xl font-semibold mb-4">User List</h2>
+
+    <div class="grid gap-4">
+      {% for user in data %}
+      <div class="bg-white p-5 rounded-xl shadow-sm">
+        <h3 class="text-lg font-semibold">User {{ user.id }}</h3>
+
+        <p><span class="font-semibold">Name:</span> {{ user.name }}</p>
+        <p><span class="font-semibold">Email:</span> {{ user.email }}</p>
+
+        <a
+          href="/user/{{ user.id }}"
+          class="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+        >
+          View Details
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
